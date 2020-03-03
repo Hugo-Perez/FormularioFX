@@ -42,6 +42,7 @@ public class Controller {
     public void initialize() {
         //TODO: Buscar mejor forma para manejar/añadir géneros
         genres = FXCollections.observableArrayList(
+                 "Aventura",
                         "Drama",
                         "Romance",
                         "Misterio",

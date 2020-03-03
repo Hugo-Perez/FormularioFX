@@ -74,7 +74,7 @@
                         <TextField fx:id="pagesField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     </children>
                 </GridPane>
-                <TextArea fx:id="summaryField" layoutX="255.0" layoutY="55.0" prefHeight="222.0" prefWidth="289.0" />
+                <TextArea fx:id="summaryField" wrapText="true" layoutX="255.0" layoutY="55.0" prefHeight="222.0" prefWidth="289.0" />
                 <Text layoutX="255.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sinopsis" />
                 <GridPane alignment="BOTTOM_CENTER" layoutX="58.0" layoutY="300.0" prefHeight="254.0" prefWidth="239.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
                     <columnConstraints>
