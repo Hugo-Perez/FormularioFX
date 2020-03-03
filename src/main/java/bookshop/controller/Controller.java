@@ -366,7 +366,11 @@ public class Controller {
         if (dialogInput.isPresent()) {
             try {
                 Book inputBook = DBConnector.loadBook(dialogInput.get());
-                searchBook(inputBook);
+                if (inputBook != null) {
+                    searchBook(inputBook);
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "No existe ningún libro con ese ISBN");
+                }
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "ERROR SQL: Comprueba que todos los campos están correctos!").showAndWait();
                 e.printStackTrace();
