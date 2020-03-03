@@ -93,17 +93,17 @@
                                     <Image url="@icons/anhadir.png" />
                                 </image>
                             </ImageView>
-                            <ImageView fx:id="deleteButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#delete" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                            <ImageView fx:id="deleteButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#deleteBook" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                 <image>
                                     <Image url="@icons/eliminar.png" />
                                 </image>
                             </ImageView>
-                        <ImageView fx:id="clearButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clear" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                        <ImageView fx:id="clearButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clearFields" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                             <image>
                                 <Image url="@icons/limpiar.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="updateButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#update" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                        <ImageView fx:id="updateButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#updateBook" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                             <image>
                                 <Image url="@icons/actualizar.png" />
                             </image>

@@ -115,7 +115,7 @@ public class Controller {
         }
     }
 
-    public void delete() {
+    public void deleteBook() {
         TextInputDialog ISBNDialog = new TextInputDialog();
         ISBNDialog.setTitle("Introduce ISBN");
         ISBNDialog.setHeaderText("Introduce el ISBN del libro a eliminar:");
@@ -137,7 +137,7 @@ public class Controller {
         }
     }
 
-    public void update() {
+    public void updateBook() {
         if (checkFields()) {
             try {
                 Book generatedBook = generateBook();
@@ -159,7 +159,7 @@ public class Controller {
         }
     }
 
-    public void clear() {
+    public void clearFields() {
         //Vaciamos los campos
         titleField.setText("");
         authorField.setText("");
