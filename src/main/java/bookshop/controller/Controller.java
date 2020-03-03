@@ -356,4 +356,21 @@ public class Controller {
             }
         }
     }
+
+    public void menuSearchBook() {
+        TextInputDialog ISBNDialog = new TextInputDialog();
+        ISBNDialog.setTitle("Introduce ISBN");
+        ISBNDialog.setHeaderText("Introduce el ISBN del libro a buscar:");
+        ISBNDialog.setContentText("ISBN:");
+        Optional<String> dialogInput = ISBNDialog.showAndWait();
+        if (dialogInput.isPresent()) {
+            try {
+                Book inputBook = DBConnector.loadBook(dialogInput.get());
+                searchBook(inputBook);
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "ERROR SQL: Comprueba que todos los campos están correctos!").showAndWait();
+                e.printStackTrace();
+            }
+        }
+    }
 }

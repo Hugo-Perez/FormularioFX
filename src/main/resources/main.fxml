@@ -13,14 +13,15 @@
             <menus>
                 <Menu id="menuFunciones" mnemonicParsing="false" text="Funciones">
                     <items>
-                        <MenuItem fx:id="menuItemLoad" onAction="#loadBook" text="Cargar Libro" />
-                        <MenuItem fx:id="menuItemGraphics" onAction="#showGraphics" text="Mostrar gráficas" />
-                        <MenuItem fx:id="menuItemPdf" onAction="#menuGeneratePDF" text="Generar PDF" />
+                        <MenuItem onAction="#loadBook" text="Cargar libro" />
+                        <MenuItem onAction="#showGraphics" text="Mostrar gráficas" />
+                        <MenuItem onAction="#menuGeneratePDF" text="Generar PDF" />
+                        <MenuItem onAction="#menuSearchBook" text="Buscar libro" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+        <AnchorPane VBox.vgrow="ALWAYS">
             <children>
                 <GridPane layoutX="600.0" layoutY="20.0" prefHeight="266.0" prefWidth="372.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
                     <columnConstraints>
