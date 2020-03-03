@@ -2,7 +2,7 @@ package bookshop.controller;
 
 import bookshop.db.DBConnector;
 import bookshop.pojo.Book;
-import com.itextpdf.text.DocumentException;
+import com.itextpdf.html2pdf.HtmlConverter;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +16,6 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -299,7 +298,7 @@ public class Controller {
         subStage.show();
     }
 
-    public void generatePDF(Book book) throws IOException, DocumentException {
+    public void generatePDF(Book book) throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Elige ruta para guardar");
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
@@ -324,13 +323,7 @@ public class Controller {
             writer.write(htmlString);
             writer.close();
 
-            OutputStream os = new FileOutputStream(fileToSave);
-            ITextRenderer renderer = new ITextRenderer();
-            renderer.setDocument(tempHtml);
-            renderer.layout();
-            renderer.createPDF(os);
-
-            os.close();
+            HtmlConverter.convertToPdf(tempHtml, fileToSave);
         }
     }
 
@@ -351,7 +344,7 @@ public class Controller {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "ERROR SQL: Comprueba que todos los campos están correctos!").showAndWait();
                 e.printStackTrace();
-            } catch (IOException | DocumentException ex) {
+            } catch (IOException ex) {
                 new Alert(Alert.AlertType.ERROR, "Error a la hora de generar pdf, comprueba la ruta").show();
             }
         }

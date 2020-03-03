@@ -12,8 +12,14 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
-    <orderEntry type="library" name="Maven: org.xhtmlrenderer:flying-saucer-pdf-itext5:9.0.1" level="project" />
-    <orderEntry type="library" name="Maven: com.itextpdf:itextpdf:5.3.0" level="project" />
-    <orderEntry type="library" name="Maven: org.xhtmlrenderer:flying-saucer-core:9.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:html2pdf:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:forms:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:kernel:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:io:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:layout:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:svg:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:styled-xml-parser:7.1.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.13" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-jdk14:1.7.25" level="project" />
   </component>
 </module>
