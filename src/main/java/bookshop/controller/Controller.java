@@ -86,8 +86,14 @@ public class Controller {
             }
         });
 
+        MenuItem menuDelete = new MenuItem("Borrar Libro");
+        menuDelete.setOnAction((ActionEvent event) -> {
+            Book selectedBook = (Book)dataTable.getSelectionModel().getSelectedItem();
+            deleteBook(selectedBook);
+        });
+
         ContextMenu menu = new ContextMenu();
-        menu.getItems().addAll(menuSearch, menuLoad, menuPdf);
+        menu.getItems().addAll(menuLoad, menuDelete, menuSearch, menuPdf);
         dataTable.setContextMenu(menu);
     }
 
@@ -115,7 +121,22 @@ public class Controller {
         }
     }
 
-    public void deleteBook() {
+    public void deleteBook(Book book) {
+            try {
+                boolean isDeleted = DBConnector.deleteBook(book.getISBN());
+                if (isDeleted) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Libro eliminado correctamente!").showAndWait();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "No se ha encontrado el libro con el ISBN especificado!").showAndWait();
+                }
+                fillTable();
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "ERROR SQL: Comprueba que todos los campos están correctos!").showAndWait();
+                e.printStackTrace();
+            }
+    }
+
+    public void menuDeleteBook() {
         TextInputDialog ISBNDialog = new TextInputDialog();
         ISBNDialog.setTitle("Introduce ISBN");
         ISBNDialog.setHeaderText("Introduce el ISBN del libro a eliminar:");
@@ -123,13 +144,8 @@ public class Controller {
         Optional<String> dialogInput = ISBNDialog.showAndWait();
         if (dialogInput.isPresent()) {
             try {
-                boolean isDeleted = DBConnector.deleteBook(dialogInput.get());
-                if (isDeleted) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Libro eliminado correctamente!").showAndWait();
-                } else {
-                    new Alert(Alert.AlertType.WARNING, "No se ha encontrado el libro con el ISBN especificado!").showAndWait();
-                }
-                fillTable();
+                Book inputBook = DBConnector.loadBook(dialogInput.get());
+                deleteBook(inputBook);
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "ERROR SQL: Comprueba que todos los campos están correctos!").showAndWait();
                 e.printStackTrace();

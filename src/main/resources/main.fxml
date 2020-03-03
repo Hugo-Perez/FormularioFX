@@ -93,7 +93,7 @@
                                     <Image url="@icons/anhadir.png" />
                                 </image>
                             </ImageView>
-                            <ImageView fx:id="deleteButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#deleteBook" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                            <ImageView fx:id="deleteButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#menuDeleteBook" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                 <image>
                                     <Image url="@icons/eliminar.png" />
                                 </image>
